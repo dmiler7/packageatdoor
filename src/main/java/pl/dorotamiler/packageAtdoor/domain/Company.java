@@ -1,4 +1,4 @@
-package DAO;
+package pl.dorotamiler.packageAtdoor.domain;
 
 public class Company {
     private String name;
