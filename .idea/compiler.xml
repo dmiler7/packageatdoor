@@ -7,7 +7,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="consoleApp" />
+
+        <module name="package@doordoor" />
+
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="package@door" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>
