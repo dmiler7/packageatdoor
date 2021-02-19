@@ -6,11 +6,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>pl.dorotamiler</groupId>
-    <artifactId>package@door</artifactId>
-    <version>0.1-SNAPSHOT</version>
+    <artifactId>packageatdoor</artifactId>
+    <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>package@door</name>
+    <name>packageatdoor</name>
     <!--    <url>http://www.example.com</url>-->
 
     <properties>
@@ -31,14 +31,14 @@
         <mockito-core.dependency.version>3.7.7</mockito-core.dependency.version>
         <mockito-junit-jupiter.dependency.version>3.7.7</mockito-junit-jupiter.dependency.version>
         <assertj-core.dependency.version>3.19.0</assertj-core.dependency.version>
+        <compiler-plugin.dependency.version>3.8.1</compiler-plugin.dependency.version>
 
         <maven-clean.plugin.version>3.1.0</maven-clean.plugin.version>
         <maven-resources.plugin.version>3.0.2</maven-resources.plugin.version>
-        <compiler.plugin.verson>3.8.0</compiler.plugin.verson>
         <surefire.plugin.version>2.22.1</surefire.plugin.version>
 
         <jar.plugin.version>3.0.2</jar.plugin.version>
-        <jar.plugin.main.class>pl.dorotamiler.packageAtDoor.App</jar.plugin.main.class>
+        <jar.plugin.main.class>pl.dorotamiler.packageatdoor.App</jar.plugin.main.class>
 
         <install.plugin.version>2.5.2</install.plugin.version>
         <deploy.plugin.version>2.8.2</deploy.plugin.version>
@@ -70,6 +70,13 @@
             <artifactId>maven-core</artifactId>
             <version>${maven-core.dependency.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>${compiler-plugin.dependency.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
@@ -142,11 +149,6 @@
                 <plugin>
                     <artifactId>maven-resources-plugin</artifactId>
                     <version>${maven-resources.plugin.version}</version>
-                </plugin>
-
-                <plugin>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>${compiler.plugin.version}</version>
                 </plugin>
 
                 <plugin>

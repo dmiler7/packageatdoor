@@ -11,7 +11,13 @@
         <module name="package@doordoor" />
 >>>>>>> Stashed changes
         <module name="consoleApp" />
+
+        <module name="package@doordoor" />
+
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="package@door" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>
