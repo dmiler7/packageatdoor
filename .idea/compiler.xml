@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="packageatdoor" />
+        <module name="consoleApp" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="consoleApp" target="11" />
+      <module name="service" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
