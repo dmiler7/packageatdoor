@@ -7,185 +7,25 @@
 
     <groupId>pl.dorotamiler</groupId>
     <artifactId>packageatdoor</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <version>1.0</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>consoleApp</module>
+    </modules>
 
     <name>packageatdoor</name>
     <!--    <url>http://www.example.com</url>-->
 
     <properties>
 
-        <jar.package.name>${project.artifactId}-${project.version}.${project.packaging}</jar.package.name>
+        <pom.package.name>${project.artifactId}-${project.version}.${project.packaging}</pom.package.name>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>11</java.version>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-
-        <junit.dependency.version>4.11</junit.dependency.version>
-        <commons-lang3.dependency.version>3.11</commons-lang3.dependency.version>
-        <maven-core.dependency.version>3.6.3</maven-core.dependency.version>
-        <json.dependency.version>20201115</json.dependency.version>
-        <gson.dependency.version>2.8.6</gson.dependency.version>
-        <junit-jupiter-api.dependency.version>5.7.1</junit-jupiter-api.dependency.version>
-        <junit-jupiter-engine.dependency.version>5.7.1</junit-jupiter-engine.dependency.version>
-        <junit-jupiter-params.dependency.version>5.7.1</junit-jupiter-params.dependency.version>
-        <mockito-core.dependency.version>3.7.7</mockito-core.dependency.version>
-        <mockito-junit-jupiter.dependency.version>3.7.7</mockito-junit-jupiter.dependency.version>
-        <assertj-core.dependency.version>3.19.0</assertj-core.dependency.version>
-        <compiler-plugin.dependency.version>3.8.1</compiler-plugin.dependency.version>
-
-        <maven-clean.plugin.version>3.1.0</maven-clean.plugin.version>
-        <maven-resources.plugin.version>3.0.2</maven-resources.plugin.version>
-        <surefire.plugin.version>2.22.1</surefire.plugin.version>
-
-        <jar.plugin.version>3.0.2</jar.plugin.version>
-        <jar.plugin.main.class>pl.dorotamiler.packageatdoor.App</jar.plugin.main.class>
-
-        <install.plugin.version>2.5.2</install.plugin.version>
-        <deploy.plugin.version>2.8.2</deploy.plugin.version>
-        <site.plugin.version>3.7.1</site.plugin.version>
-        <project.info.report.plugin.version>3.0.0</project.info.report.plugin.version>
-
-        <!--        <war.plugin.version>3.2.2</war.plugin.version>-->
-        <!--        <war.plugin.main.class>pl.dorotamiler.packageAtDoor.App</war.plugin.main.class>-->
+        <maven.compiler.release>${java.version}</maven.compiler.release>
 
     </properties>
-
-    <dependencies>
-
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit.dependency.version}</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>${commons-lang3.dependency.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.maven</groupId>
-            <artifactId>maven-core</artifactId>
-            <version>${maven-core.dependency.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>${compiler-plugin.dependency.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.json</groupId>
-            <artifactId>json</artifactId>
-            <version>${json.dependency.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-            <version>${gson.dependency.version}</version>
-            <scope>compile</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>${junit-jupiter-api.dependency.version}</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit-jupiter-engine.dependency.version}</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-params</artifactId>
-            <version>${junit-jupiter-params.dependency.version}</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-            <version>${mockito-core.dependency.version}</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-junit-jupiter</artifactId>
-            <version>${mockito-junit-jupiter.dependency.version}</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.assertj</groupId>
-            <artifactId>assertj-core</artifactId>
-            <version>${assertj-core.dependency.version}</version>
-            <scope>test</scope>
-        </dependency>
-
-    </dependencies>
-
-    <build>
-
-        <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
-
-            <plugins>
-                <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
-                <plugin>
-                    <artifactId>maven-clean-plugin</artifactId>
-                    <version>${maven-clean.plugin.version}</version>
-                </plugin>
-
-                <!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
-                <plugin>
-                    <artifactId>maven-resources-plugin</artifactId>
-                    <version>${maven-resources.plugin.version}</version>
-                </plugin>
-
-                <plugin>
-                    <artifactId>maven-surefire-plugin</artifactId>
-                    <version>${surefire.plugin.version}</version>
-                </plugin>
-
-                <plugin>
-                    <artifactId>maven-jar-plugin</artifactId>
-                    <version>${jar.plugin.version}</version>
-                </plugin>
-
-                <plugin>
-                    <artifactId>maven-install-plugin</artifactId>
-                    <version>${install.plugin.version}</version>
-                </plugin>
-
-                <plugin>
-                    <artifactId>maven-deploy-plugin</artifactId>
-                    <version>${deploy.plugin.version}</version>
-                </plugin>
-
-                <!-- site lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#site_Lifecycle -->
-                <plugin>
-                    <artifactId>maven-site-plugin</artifactId>
-                    <version>${site.plugin.version}</version>
-                </plugin>
-
-                <plugin>
-                    <artifactId>maven-project-info-reports-plugin</artifactId>
-                    <version>${project-info-reports.plugin.version}</version>
-                </plugin>
-
-            </plugins>
-
-        </pluginManagement>
-
-    </build>
 
 </project>
